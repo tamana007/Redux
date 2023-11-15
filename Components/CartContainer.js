@@ -26,16 +26,23 @@ function CartContainer() {
   )
 }
 return(
-  <div>
+  <section className='cart'>
+     <header><h2>Yur Bag</h2></header>
      
-     cart Container
      {/* {mcartItem.map((item)=>{return <p>hello</p> })} */}
      {/* {cartItem.map((item)=>{return <CartItem>{item.title}</CartItem>})} */}
    
-     <div>{cartItems.map((item)=>{return <CartItem key={item.id}/>})}</div>
+     <div>{cartItems.map((item)=>{return <CartItem key={item.id}{...cartItems}/>})}</div>
+     <footer>
+      <hr/>
+      <div className='cart-total'>
+        <h4>total <span>${total}</span></h4>
+      </div>
+      <button className='btn clear-btn'>CLEAR BTN</button>
+     </footer>
 
-     <button className='remove-btn'>CLEAR BTN</button>
-   </div>
+    
+   </section>
 
 )
 
