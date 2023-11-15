@@ -2,7 +2,7 @@ import React from 'react'
 
 function CartItem() {
   return (
-    <div>CartItem</div>
+    <div>CartItem is here</div>
   )
 }
 

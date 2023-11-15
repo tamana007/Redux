@@ -12,8 +12,7 @@ function Navbar() {
  const {amount}=useSelector((store)=>store.cart)
 //  console.log(amount);
 
- const cartItem=useSelector((store)=>store.cart.cartItems)
- console.log(cartItem)
+ 
   return (
     <>
     <nav>
