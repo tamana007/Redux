@@ -41,7 +41,7 @@ return(
      <footer>
       <hr/>
       <div className='cart-total'>
-        <h4>{total} <span>${calculateTotal}</span></h4>
+        <h4>{total.toFixed(2)} <span>${calculateTotal}</span></h4>
       </div>
       <button onClick={()=>dispatch(clearCart())} className='btn clear-btn'>CLEAR BTN</button>
      </footer>
