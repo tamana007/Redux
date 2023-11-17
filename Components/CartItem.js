@@ -2,11 +2,13 @@ import React from 'react'
 import { ChevronDown,ChevronUp } from '../icons'
 // import { Dispatch } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { increment} from '../features/cart/cartSlice';
+import { increment,amount} from '../features/cart/cartSlice';
 
-function CartItem({img,title,amount,price}) {
+function CartItem({img,title,price,amount,id}) {
   const dispatch=useDispatch();
-  const amout=dispatch
+  const myamount=useSelector((state)=>state.cart.amount)
+  console.log('here is amount:',amount);
+  // const amout=dispatch
   // const amountValue=useSelector((store)=>store.CartItem.amount)
 
   
@@ -19,8 +21,8 @@ function CartItem({img,title,amount,price}) {
 <button className='remove-btn' >reove</button>
       </div>
       <div>
-        <button onClick={()=>dispatch(increment())} className='amount-btn'><ChevronUp/></button>
-        <p className='amount'>{state.amount}</p>
+        <button onClick={()=>dispatch(increment(id))} className='amount-btn'><ChevronUp/></button>
+        <p className='amount'>{amount}</p>
         
       <div><button className='amount-btn'><ChevronDown/></button>
       </div></div>
