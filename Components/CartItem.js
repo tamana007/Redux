@@ -24,7 +24,7 @@ function CartItem({img,title,price,amount,id}) {
         <button onClick={()=>dispatch(increment(id))} className='amount-btn'><ChevronUp/></button>
         <p className='amount'>{amount}</p>
         
-      <div><button onClick={()=>{dispatch(decrement(id))}} className='amount-btn'><ChevronDown/></button>
+      <div><button onClick={()=>{if(amount===1){dispatch(remove(id))}else dispatch(decrement(id))}} className='amount-btn'><ChevronDown/></button>
       </div></div>
     </article>
   )
