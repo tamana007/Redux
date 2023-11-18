@@ -14,7 +14,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     clearCart: (state) => {
-      // console.log('clearcart reducr called');
+      console.log('clearcart reducr called');
       state.cartItems = [];
     },
     remove: (state, action) => {

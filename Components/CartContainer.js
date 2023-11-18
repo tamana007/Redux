@@ -3,12 +3,14 @@ import CartItem from './CartItem'
 import { Store } from '@reduxjs/toolkit'
 import { useSelector,useDispatch } from 'react-redux'
 import { clearCart,calculateTotal } from '../features/cart/cartSlice'
+import { openModal } from '../features/modal/modalSlice'
 
 
 function CartContainer() {
  
   const {cartItems,amount,total}=useSelector((state)=>state.cart)
- console.log('total',total)
+  // const {openModal}=useSelector((store)=>store.modal)
+//  console.log('total',total)
  const dispatch=useDispatch();
 
  useEffect(()=>{
@@ -43,7 +45,7 @@ return(
       <div className='cart-total'>
         <h4>{total.toFixed(2)} <span>${calculateTotal}</span></h4>
       </div>
-      <button onClick={()=>dispatch(clearCart())} className='btn clear-btn'>CLEAR BTN</button>
+      <button onClick={()=>dispatch(openModal())} className='btn clear-btn'>CLEAR BTN</button>
      </footer>
 
     
