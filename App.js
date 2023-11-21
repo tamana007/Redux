@@ -2,11 +2,12 @@ import Navbar from "./Components/Navbar";
 import CartContainer from "./Components/CartContainer";
 import Modal from "./Components/Modal";
 import { useDispatch, useSelector} from "react-redux";
+import { calculateTotal,getCardItem } from "./features/cart/cartSlice";
 
 function App() {
-  
+  const {cartItem,isLoading}=useSelector((store)=>store.cart)
   const { isOpen } = useSelector((store) => store.modal);
-  console.log('open',isOpen);
+  // console.log('open',isOpen);
   const dispatch=useDispatch();
   return (
     <div>
