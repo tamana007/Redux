@@ -13,9 +13,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(calculateTotal);
+    dispatch(calculateTotal());
   }, [cartItems]);
-  useEffect(()=>{dispatch(getCardItem)},[]);
+  useEffect(()=>{dispatch(getCardItem())},[]);
 
   if(isLoading){
     return (<div className="loading">

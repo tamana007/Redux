@@ -28,7 +28,7 @@ const cartSlice = createSlice({
       state.cartItems = state.cartItems.filter(
         (item) => item.id !== action.payload
       );
-      console.log("rremoved");
+      // console.log("rremoved");
     },
     calculateTotal: (state) => {
       //       state.cart.total=3000;
